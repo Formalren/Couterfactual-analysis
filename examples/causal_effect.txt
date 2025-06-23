@@ -1,0 +1,42 @@
+<IPython.core.display.Image object>
+*** Causal Estimate ***
+## Identified estimand
+Estimand type: EstimandType.NONPARAMETRIC_ATE
+### Estimand : 1
+Estimand name: backdoor
+Estimand expression:
+                                                                              
+──────────────────────────────────────────────────────────────────────────────
+d[traffic_density  num_scenarios  accident_prob  map  daytime  lidarₙᵤₘ ₗₐₛₑᵣₛ
+                                                                              
+──────────────────────────────────────────────────────────────────────────────
+  lidar_distance  lidar_gaussian_noise  lidar_dropout_prob  side_detector_num_
+                              d                                               
+──────────────────────────────────────────────────────────────────────────────
+lasers  side_detector_distance  side_detector_gaussian_noise  side_detector_dr
+                                                                              
+──────────────────────────────────────────────────────────────────────────────
+opout_prob  lane_line_detector_num_lasers  lane_line_detector_distance  lane_l
+                                                                              
+─────────────────────────────────────────────────────────────(E[crash_vehicle]
+ine_detector_gaussian_noise  lane_line_detector_dropout_prob]                 
+ 
+)
+ 
+Estimand assumption 1, Unconfoundedness: If U→{traffic_density,num_scenarios,accident_prob,map,daytime,lidar_num_lasers,lidar_distance,lidar_gaussian_noise,lidar_dropout_prob,side_detector_num_lasers,side_detector_distance,side_detector_gaussian_noise,side_detector_dropout_prob,lane_line_detector_num_lasers,lane_line_detector_distance,lane_line_detector_gaussian_noise,lane_line_detector_dropout_prob} and U→crash_vehicle then P(crash_vehicle|traffic_density,num_scenarios,accident_prob,map,daytime,lidar_num_lasers,lidar_distance,lidar_gaussian_noise,lidar_dropout_prob,side_detector_num_lasers,side_detector_distance,side_detector_gaussian_noise,side_detector_dropout_prob,lane_line_detector_num_lasers,lane_line_detector_distance,lane_line_detector_gaussian_noise,lane_line_detector_dropout_prob,,U) = P(crash_vehicle|traffic_density,num_scenarios,accident_prob,map,daytime,lidar_num_lasers,lidar_distance,lidar_gaussian_noise,lidar_dropout_prob,side_detector_num_lasers,side_detector_distance,side_detector_gaussian_noise,side_detector_dropout_prob,lane_line_detector_num_lasers,lane_line_detector_distance,lane_line_detector_gaussian_noise,lane_line_detector_dropout_prob,)
+## Realized estimand
+b: crash_vehicle,crash_object,crash_building,crash_human,crash_sidewalk,out_of_road~traffic_density+num_scenarios+accident_prob+map+daytime+lidar_num_lasers+lidar_distance+lidar_gaussian_noise+lidar_dropout_prob+side_detector_num_lasers+side_detector_distance+side_detector_gaussian_noise+side_detector_dropout_prob+lane_line_detector_num_lasers+lane_line_detector_distance+lane_line_detector_gaussian_noise+lane_line_detector_dropout_prob
+Target units: ate
+## Estimate
+Mean value: 0.5512240159547752
+Causal Estimate is 0.5512240159547752
+Refuting Estimates: 100%|██████████| 100/100 [00:03<00:00, 29.59it/s]
+Refute: Add a random common cause
+Estimated effect:0.5512240159547752
+New effect:0.5496992307090408
+p value:0.9
+Refuting Estimates: 100%|██████████| 100/100 [00:02<00:00, 34.84it/s]
+Refute: Use a subset of data
+Estimated effect:0.5512240159547752
+New effect:0.545536556817736
+p value:0.92
